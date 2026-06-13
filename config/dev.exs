@@ -10,8 +10,8 @@ config :loja, LojaWeb.Endpoint,
   ]
 
 config :loja, Loja.Repo,
-  username: "postgres",
-  password: "antonioquental_",
+  username: "aquental",
+  password: "aquental",
   hostname: "hermes",
   database: "loja_dev",
   ssl: false,

@@ -3,8 +3,8 @@ import Config
 config :loja, LojaWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :loja, Loja.Repo,
-  username: "postgres",
-  password: "antonioquental_",
+  username: "aquental",
+  password: "aquental",
   hostname: "hermes",
   database: "loja_test",
   pool: Ecto.Adapters.SQL.Sandbox,

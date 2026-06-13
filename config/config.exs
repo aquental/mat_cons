@@ -16,8 +16,8 @@ config :loja, LojaWeb.Gettext, locales: ~w(en pt_BR), default_locale: "pt_BR"
 config :ash, :utc_datetime_usec, type: Ash.Type.UTCDatetimeUsec, default: &DateTime.utc_now/0
 
 config :loja, Loja.Repo,
-  username: "postgres",
-  password: "antonioquental_",
+  username: "aquental",
+  password: "aquental",
   hostname: "hermes",
   database: "loja_dev",
   ssl: false,
