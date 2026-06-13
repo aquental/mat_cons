@@ -5,7 +5,7 @@ defmodule Loja.MixProject do
     [
       app: :loja,
       version: "0.1.0",
-      elixir: "~> 1.18",
+      elixir: "~> 1.20",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -39,6 +39,9 @@ defmodule Loja.MixProject do
       {:ash_postgres, "~> 2.0"},
       {:ash_graphql, "~> 1.0"},
       {:ash_admin, "~> 0.11"},
+
+      # Web Server
+      {:plug_cowboy, "~> 2.7"},
 
       # Web Assets
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
