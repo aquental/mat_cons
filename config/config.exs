@@ -6,9 +6,10 @@ config :loja,
 
 config :loja, LojaWeb.Endpoint,
   url: [host: "localhost"],
+  secret_key_base: "XV+xe+fZATcQmmy88j+KcrgQZnlb6j59HjKMvxxt0+y1kLa3YhCWF/tBZsxOQN4C",
   render_errors: [formats: [html: LojaWeb.ErrorHTML, json: LojaWeb.ErrorJSON]],
   pubsub_server: Loja.PubSub,
-  live_view: [signing_salt: "CHANGE_ME"]
+  live_view: [signing_salt: "LOJA_SALT_001"]
 
 config :loja, LojaWeb.Gettext, locales: ~w(en pt_BR), default_locale: "pt_BR"
 
@@ -30,5 +31,24 @@ config :logger, :console,
   metadata: [:request_id]
 
 config :phoenix, :json_library, Jason
+
+# Asset build profiles
+config :esbuild,
+  version: "0.25.0",
+  loja: [
+    args: ~w(js/app.js --bundle --target=es2016 --outdir=../priv/static/assets --external:phoenix-colocated/loja),
+    cd: Path.expand("../assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ]
+
+config :tailwind,
+  version: "4.3.0",
+  loja: [
+    args: ~w(
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
+  ]
 
 import_config "#{config_env()}.exs"

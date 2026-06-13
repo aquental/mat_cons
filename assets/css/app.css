@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @plugin "../vendor/daisyui.js";
 @plugin "../vendor/daisyui-theme.js";
-@plugin "../vendor/heroicons.js";
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
