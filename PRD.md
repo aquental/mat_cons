@@ -32,9 +32,10 @@ A LOJA é uma plataforma **D2C (Direct-to-Consumer)** para venda de materiais de
 **Público:** Consumidores finais (não CNPJ) que estão reformando ou construindo  
 **Modelo:** Loja própria (single-tenant, D2C) — marketplace multi-vendedor fica para v2
 
-**Por que Elixir/Phoenix/Ash?**  
-- Concorrência massiva (BEAM) para suportar sessões simultâneas do chat IA  
-- Ash Framework entrega um **domain layer declarativo** que mapeia 1:1 com regras de negócio de construção civil (categorias, composições, substituições de materiais)  
+**Por que Elixir/Phoenix/Ash?**
+
+- Concorrência massiva (BEAM) para suportar sessões simultâneas do chat IA
+- Ash Framework entrega um **domain layer declarativo** que mapeia 1:1 com regras de negócio de construção civil (categorias, composições, substituições de materiais)
 - Phoenix LiveView elimina a complexidade de SPA + API REST para um catálogo que não precisa de offline-first
 
 ---
@@ -63,12 +64,12 @@ Um e-commerce especializado com **IA consultiva** que:
 
 ### 2.3 Concorrência Indireta
 
-| Concorrente | Força | Fragilidade |
-|-------------|-------|-------------|
-| Leroy Merlin (online) | Marca forte, estoque gigante | Catálogo genérico, sem curadoria técnica |
-| Telhanorte / Tumelero | Entrega rápida em SP | Sem IA consultiva, foco em volume |
-| Mercado Livre / Shopee | Tráfego massivo | Zero confiança técnica, produtos misturados |
-| Lojas físicas de bairro | Atendimento pessoal | Estoque limitado, sem digital |
+| Concorrente             | Força                        | Fragilidade                                 |
+| ----------------------- | ---------------------------- | ------------------------------------------- |
+| Leroy Merlin (online)   | Marca forte, estoque gigante | Catálogo genérico, sem curadoria técnica    |
+| Telhanorte / Tumelero   | Entrega rápida em SP         | Sem IA consultiva, foco em volume           |
+| Mercado Livre / Shopee  | Tráfego massivo              | Zero confiança técnica, produtos misturados |
+| Lojas físicas de bairro | Atendimento pessoal          | Estoque limitado, sem digital               |
 
 **Posicionamento da LOJA:** Curadoria técnica com IA — não somos o maior estoque, somos o que garante que você comprou o material **certo** para sua obra.
 
@@ -109,46 +110,46 @@ Um e-commerce especializado com **IA consultiva** que:
 
 ### EP-01: Catálogo e Navegação
 
-| ID | User Story | Prioridade |
-|----|-----------|-----------|
-| US-01 | Como cliente, quero navegar por categorias (Hidráulica, Elétrica, Acabamento, Estrutural) para encontrar produtos rapidamente | P0 |
-| US-02 | Como cliente, quero buscar produtos por nome, código ou aplicação (ex: "argamassa para piscina") | P0 |
-| US-03 | Como cliente, quero ver fotos, descrição técnica, preço e estoque de cada produto | P0 |
-| US-04 | Como cliente, quero filtrar por marca, faixa de preço, unidade (kg, metro, peça) | P1 |
-| US-05 | Como cliente, quero ver produtos relacionados e compatíveis (ex: "quem comprou este bloco também levou esta argamassa") | P1 |
+| ID    | User Story                                                                                                                    | Prioridade |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| US-01 | Como cliente, quero navegar por categorias (Hidráulica, Elétrica, Acabamento, Estrutural) para encontrar produtos rapidamente | P0         |
+| US-02 | Como cliente, quero buscar produtos por nome, código ou aplicação (ex: "argamassa para piscina")                              | P0         |
+| US-03 | Como cliente, quero ver fotos, descrição técnica, preço e estoque de cada produto                                             | P0         |
+| US-04 | Como cliente, quero filtrar por marca, faixa de preço, unidade (kg, metro, peça)                                              | P1         |
+| US-05 | Como cliente, quero ver produtos relacionados e compatíveis (ex: "quem comprou este bloco também levou esta argamassa")       | P1         |
 
 ### EP-02: Carrinho e Checkout
 
-| ID | User Story | Prioridade |
-|----|-----------|-----------|
-| US-06 | Como cliente, quero adicionar produtos ao carrinho com quantidade e ver subtotal | P0 |
-| US-07 | Como cliente, quero revisar o carrinho antes de finalizar | P0 |
-| US-08 | Como cliente, quero informar CEP para cálculo de frete | P0 |
-| US-09 | Como cliente, quero escolher forma de entrega (retirada, transportadora) | P0 |
-| US-10 | Como cliente, quero finalizar pedido com dados de contato (sem cadastro obrigatório — guest checkout) | P0 |
-| US-11 | Como cliente, quero receber confirmação do pedido por e-mail/WhatsApp | P1 |
+| ID    | User Story                                                                                            | Prioridade |
+| ----- | ----------------------------------------------------------------------------------------------------- | ---------- |
+| US-06 | Como cliente, quero adicionar produtos ao carrinho com quantidade e ver subtotal                      | P0         |
+| US-07 | Como cliente, quero revisar o carrinho antes de finalizar                                             | P0         |
+| US-08 | Como cliente, quero informar CEP para cálculo de frete                                                | P0         |
+| US-09 | Como cliente, quero escolher forma de entrega (retirada, transportadora)                              | P0         |
+| US-10 | Como cliente, quero finalizar pedido com dados de contato (sem cadastro obrigatório — guest checkout) | P0         |
+| US-11 | Como cliente, quero receber confirmação do pedido por e-mail/WhatsApp                                 | P1         |
 
 ### EP-03: Consultor de Obras com IA
 
-| ID | User Story | Prioridade |
-|----|-----------|-----------|
-| US-12 | Como cliente, quero descrever minha obra em linguagem natural ("vou rebocar uma parede de 15m²") e receber a lista de materiais necessários | P0 |
-| US-13 | Como cliente, quero que o consultor calcule quantidades com base em medidas que eu informar | P0 |
-| US-14 | Como cliente, quero que o consultor explique **por que** cada material é necessário (educativo, não só vendedor) | P0 |
-| US-15 | Como cliente, quero adicionar todos os materiais sugeridos ao carrinho com um clique | P0 |
-| US-16 | Como cliente, quero fazer perguntas de follow-up ("precisa de impermeabilizante também?") | P1 |
-| US-17 | Como cliente, quero que o consultor sugira alternativas (marca X ou Y, qualidade similar, preço diferente) | P1 |
+| ID    | User Story                                                                                                                                  | Prioridade |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| US-12 | Como cliente, quero descrever minha obra em linguagem natural ("vou rebocar uma parede de 15m²") e receber a lista de materiais necessários | P0         |
+| US-13 | Como cliente, quero que o consultor calcule quantidades com base em medidas que eu informar                                                 | P0         |
+| US-14 | Como cliente, quero que o consultor explique **por que** cada material é necessário (educativo, não só vendedor)                            | P0         |
+| US-15 | Como cliente, quero adicionar todos os materiais sugeridos ao carrinho com um clique                                                        | P0         |
+| US-16 | Como cliente, quero fazer perguntas de follow-up ("precisa de impermeabilizante também?")                                                   | P1         |
+| US-17 | Como cliente, quero que o consultor sugira alternativas (marca X ou Y, qualidade similar, preço diferente)                                  | P1         |
 
 ### EP-04: Admin Dashboard
 
-| ID | User Story | Prioridade |
-|----|-----------|-----------|
-| US-18 | Como admin, quero gerenciar o catálogo (CRUD de produtos, categorias, marcas, variações) | P0 |
-| US-19 | Como admin, quero ver pedidos recebidos com status (novo, confirmado, em separação, enviado, entregue) | P0 |
-| US-20 | Como admin, quero atualizar o status do pedido manualmente | P0 |
-| US-21 | Como admin, quero ver dashboard com métricas (pedidos/dia, receita, tickets médio, estoque baixo) | P1 |
-| US-22 | Como admin, quero gerenciar o conteúdo do consultor de IA (produtos associados a cada tipo de obra, regras de substituição) | P1 |
-| US-23 | Como admin, quero exportar pedidos para CSV | P2 |
+| ID    | User Story                                                                                                                  | Prioridade |
+| ----- | --------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| US-18 | Como admin, quero gerenciar o catálogo (CRUD de produtos, categorias, marcas, variações)                                    | P0         |
+| US-19 | Como admin, quero ver pedidos recebidos com status (novo, confirmado, em separação, enviado, entregue)                      | P0         |
+| US-20 | Como admin, quero atualizar o status do pedido manualmente                                                                  | P0         |
+| US-21 | Como admin, quero ver dashboard com métricas (pedidos/dia, receita, tickets médio, estoque baixo)                           | P1         |
+| US-22 | Como admin, quero gerenciar o conteúdo do consultor de IA (produtos associados a cada tipo de obra, regras de substituição) | P1         |
+| US-23 | Como admin, quero exportar pedidos para CSV                                                                                 | P2         |
 
 ---
 
@@ -178,7 +179,7 @@ Um e-commerce especializado com **IA consultiva** que:
 ### RF-04: Checkout (P0)
 
 - Fluxo: Revisão do carrinho → CEP + Frete → Dados de contato → Confirmação
-- **Sem gateway de pagamento na v0.1** — pedido é registrado como "PENDENTE" e o admin confirma por WhatsApp para acertar pagamento (PIX/transferência). *Sim, é manual — o MVP testa demanda antes de integrar stripe/asaas.*
+- **Sem gateway de pagamento na v0.1** — pedido é registrado como "PENDENTE" e o admin confirma por WhatsApp para acertar pagamento (PIX/transferência). _Sim, é manual — o MVP testa demanda antes de integrar stripe/asaas._
 - Cálculo de frete via tabela fixa por CEP (faixas) — transportadora externa depois
 - Confirmação por e-mail
 
@@ -216,15 +217,15 @@ Um e-commerce especializado com **IA consultiva** que:
 
 ### 6.1 Stack Decidida
 
-| Camada | Tecnologia | Justificativa |
-|--------|-----------|---------------|
-| Backend | Elixir 1.18+ / Phoenix 1.7+ | Concorrência BEAM para chat IA, maduro para web |
-| Domain Layer | Ash Framework 3.x | Declarativo, gera API GraphQL/REST, migrações, autorização |
-| Database | PostgreSQL 16 | Relacional maduro, JSONB para attributes flexíveis |
-| Frontend | Phoenix LiveView + HEEx | Sem SPA — catálogo não precisa de offline, elimina camada REST |
-| CSS | Tailwind CSS + DaisyUI | Prototipação rápida, componentes acessíveis |
-| IA | API LLM (provider a definir) | System prompt + RAG sobre catálogo local |
-| Deploy | Fly.io / Gigalixir / Hetzner + Docker | BEAM-native hosting |
+| Camada       | Tecnologia                            | Justificativa                                                  |
+| ------------ | ------------------------------------- | -------------------------------------------------------------- |
+| Backend      | Elixir 1.18+ / Phoenix 1.7+           | Concorrência BEAM para chat IA, maduro para web                |
+| Domain Layer | Ash Framework 3.x                     | Declarativo, gera API GraphQL/REST, migrações, autorização     |
+| Database     | PostgreSQL 18                         | Relacional maduro, JSONB para attributes flexíveis             |
+| Frontend     | Phoenix LiveView + HEEx               | Sem SPA — catálogo não precisa de offline, elimina camada REST |
+| CSS          | Tailwind CSS + DaisyUI                | Prototipação rápida, componentes acessíveis                    |
+| IA           | API LLM (provider a definir)          | System prompt + RAG sobre catálogo local                       |
+| Deploy       | Fly.io / Gigalixir / Hetzner + Docker | BEAM-native hosting                                            |
 
 ### 6.2 Arquitetura de Alto Nível
 
@@ -252,7 +253,7 @@ Um e-commerce especializado com **IA consultiva** que:
                          │
                          ▼
 ┌─────────────────────────────────────────────────────────┐
-│                   PostgreSQL 16                          │
+│                   PostgreSQL 18                          │
 │  products | categories | orders | obra_rules | carts    │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -363,6 +364,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 ### 7.1 Entidades Detalhadas
 
 **Product**
+
 - `id`: UUID (Ash default)
 - `name`: string (ex: "Argamassa AC-III 20kg")
 - `slug`: string (unique, gerado do name)
@@ -382,6 +384,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 - `timestamps`: created_at, updated_at
 
 **ProductVariant**
+
 - `id`: UUID
 - `product_id`: UUID (belongs_to Product)
 - `sku`: string (unique)
@@ -393,6 +396,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 - `active`: boolean
 
 **Category**
+
 - `id`: UUID
 - `name`: string ("Hidráulica")
 - `slug`: string
@@ -402,6 +406,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 - `active`: boolean
 
 **Cart**
+
 - `id`: UUID
 - `token`: string (uuid v4, enviado via cookie ou query param)
 - `status`: enum (ativo, convertido, abandonado)
@@ -409,6 +414,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 - `items`: has_many CartItem
 
 **CartItem**
+
 - `id`: UUID
 - `cart_id`: UUID
 - `product_id`: UUID
@@ -417,6 +423,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 - `unit_price`: decimal (snapshot no momento da adição)
 
 **Order**
+
 - `id`: UUID
 - `cart_id`: UUID (referência ao carrinho convertido)
 - `contact_name`: string
@@ -435,6 +442,7 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 - `timestamps`
 
 **ObraRule**
+
 - `id`: UUID
 - `obra_type`: string (ex: "assentar-porcelanato", "reboco-interno", "pintura-parede")
 - `name`: string (ex: "Assentar Porcelanato 60x60")
@@ -457,17 +465,17 @@ O **AshAdmin** é uma gem (biblioteca) do ecossistema Ash que gera automaticamen
 
 ### 8.2 Páginas (v0.1)
 
-| Página | Componentes Principais |
-|--------|----------------------|
-| **Home** | Banner + Consultor IA (CTA principal) + Categorias em grid + Produtos em destaque |
-| **Catálogo** | Sidebar de categorias + Grid de produtos + Busca + Filtros |
-| **Produto** | Fotos (galeria) + Nome + Preço + Variações + Descrição técnica + Compatíveis + Botão Add to Cart |
-| **Carrinho** | Lista de itens + Quantidades + Subtotal + CEP/Frete + Botão Finalizar |
-| **Checkout** | Formulário de contato + Resumo do pedido + Confirmação |
-| **Confirmação** | Número do pedido + Instruções de pagamento + Resumo |
-| **Admin/Produtos** | AshAdmin + CRUD + Upload de imagens |
-| **Admin/Pedidos** | AshAdmin + Página custom de métricas |
-| **Admin/Consultor** | CRUD ObraRules (LiveView custom) |
+| Página              | Componentes Principais                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------------------ |
+| **Home**            | Banner + Consultor IA (CTA principal) + Categorias em grid + Produtos em destaque                |
+| **Catálogo**        | Sidebar de categorias + Grid de produtos + Busca + Filtros                                       |
+| **Produto**         | Fotos (galeria) + Nome + Preço + Variações + Descrição técnica + Compatíveis + Botão Add to Cart |
+| **Carrinho**        | Lista de itens + Quantidades + Subtotal + CEP/Frete + Botão Finalizar                            |
+| **Checkout**        | Formulário de contato + Resumo do pedido + Confirmação                                           |
+| **Confirmação**     | Número do pedido + Instruções de pagamento + Resumo                                              |
+| **Admin/Produtos**  | AshAdmin + CRUD + Upload de imagens                                                              |
+| **Admin/Pedidos**   | AshAdmin + Página custom de métricas                                                             |
+| **Admin/Consultor** | CRUD ObraRules (LiveView custom)                                                                 |
 
 ### 8.3 Fluxo Principal (User Journey)
 
@@ -487,14 +495,14 @@ Home → "Quero reformar meu banheiro"
 
 ### Fase 1 — MVP (v0.1) — 6-8 semanas
 
-| Marco | Entregas | Esforço |
-|-------|----------|---------|
-| **M1 — Setup do Projeto** | Phoenix + Ash + PostgreSQL + Tailwind + AshAdmin rodando | 1 semana |
-| **M2 — Catálogo** | Resources Product, Category, ProductVariant + Admin CRUD + Seed de produtos de teste + Páginas P0 (home, catálogo, produto) | 2 semanas |
-| **M3 — Carrinho + Checkout** | Resources Cart, CartItem, Order + Fluxo de checkout (sem pagamento) + Confirmação por e-mail | 1.5 semanas |
-| **M4 — Consultor IA** | Resource ObraRule + GenServer de sessão + Integração LLM + Chat UI + Calculadora de quantidades + "Adicionar ao carrinho" | 2 semanas |
-| **M5 — Admin Dashboard** | AshAdmin tuning + Página de métricas + CRUD ObraRules + Tuning de busca | 1 semana |
-| **M6 — QA + Deploy** | Testes de fluxo completo, correções, deploy em produção | 1 semana |
+| Marco                        | Entregas                                                                                                                    | Esforço     |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| **M1 — Setup do Projeto**    | Phoenix + Ash + PostgreSQL + Tailwind + AshAdmin rodando                                                                    | 1 semana    |
+| **M2 — Catálogo**            | Resources Product, Category, ProductVariant + Admin CRUD + Seed de produtos de teste + Páginas P0 (home, catálogo, produto) | 2 semanas   |
+| **M3 — Carrinho + Checkout** | Resources Cart, CartItem, Order + Fluxo de checkout (sem pagamento) + Confirmação por e-mail                                | 1.5 semanas |
+| **M4 — Consultor IA**        | Resource ObraRule + GenServer de sessão + Integração LLM + Chat UI + Calculadora de quantidades + "Adicionar ao carrinho"   | 2 semanas   |
+| **M5 — Admin Dashboard**     | AshAdmin tuning + Página de métricas + CRUD ObraRules + Tuning de busca                                                     | 1 semana    |
+| **M6 — QA + Deploy**         | Testes de fluxo completo, correções, deploy em produção                                                                     | 1 semana    |
 
 ### Fase 2 — v0.2 (pós-MVP)
 
@@ -519,22 +527,22 @@ Home → "Quero reformar meu banheiro"
 
 ### 10.1 Métricas de Produto (v0.1)
 
-| Métrica | Definição | Alvo (3 meses) |
-|---------|-----------|----------------|
-| Taxa de conversão | Pedidos finalizados / Visitantes únicos | > 3% |
-| Ticket médio | Receita total / Pedidos | > R$ 350 |
-| Uso do consultor IA | Sessões de consulta / Visitantes únicos | > 25% |
-| Add-to-cart via consultor | Itens no carrinho originados do consultor / Total de itens | > 40% |
-| Taxa de abandono de carrinho | Carrinhos criados que não viraram pedido | < 60% |
-| Precisão do consultor | Produtos sugeridos que foram mantidos no pedido final | > 80% |
+| Métrica                      | Definição                                                  | Alvo (3 meses) |
+| ---------------------------- | ---------------------------------------------------------- | -------------- |
+| Taxa de conversão            | Pedidos finalizados / Visitantes únicos                    | > 3%           |
+| Ticket médio                 | Receita total / Pedidos                                    | > R$ 350       |
+| Uso do consultor IA          | Sessões de consulta / Visitantes únicos                    | > 25%          |
+| Add-to-cart via consultor    | Itens no carrinho originados do consultor / Total de itens | > 40%          |
+| Taxa de abandono de carrinho | Carrinhos criados que não viraram pedido                   | < 60%          |
+| Precisão do consultor        | Produtos sugeridos que foram mantidos no pedido final      | > 80%          |
 
 ### 10.2 Métricas Técnicas
 
-| Métrica | Alvo |
-|---------|------|
-| Tempo de carregamento (LCP) | < 2.5s (mobile) |
-| Tempo de resposta do consultor IA | < 5s |
-| Uptime | 99.5% |
+| Métrica                           | Alvo            |
+| --------------------------------- | --------------- |
+| Tempo de carregamento (LCP)       | < 2.5s (mobile) |
+| Tempo de resposta do consultor IA | < 5s            |
+| Uptime                            | 99.5%           |
 
 ---
 
@@ -558,41 +566,41 @@ Estes itens estão **explicitamente excluídos** do MVP e serão tratados em ver
 
 ## 12. Riscos & Mitigações
 
-| Risco | Impacto | Probabilidade | Mitigação |
-|-------|---------|---------------|-----------|
-| **LLM alucina produto que não existe no catálogo** | Crítico — cliente tenta comprar o que não temos | Média | System prompt com validação rígida + pós-processamento que só permite produtos do banco + fallback para regras estáticas |
-| **Ash Framework curva de aprendizado** | Médio — atraso no M1 | Alta | Usar AshIgniter (gerador de projetos), começar com Resources simples, evoluir gradualmente |
-| **Cliente informa medidas erradas para o consultor** | Médio — sugestão de quantidade errada | Alta | Consultor deve deixar explícito "calculei com base em X metros que você informou" e permitir ajuste manual da quantidade |
-| **Estoque negativo (race condition no checkout)** | Alto — vender o que não tem | Baixa | Usar row-level locking no PostgreSQL (SELECT ... FOR UPDATE) na confirmação do pedido |
-| **Abandono por checkout manual (sem pagamento online)** | Alto — baixa conversão | Média | É uma decisão consciente do MVP. Se a taxa de abandono for > 70%, priorizar gateway de pagamento na v0.2 |
-| **Deploy BEAM em PaaS desconhecido** | Médio — debugging de release | Média | Usar Docker + Docker Compose local, depois migrar para Fly.io que tem suporte nativo a Elixir |
+| Risco                                                   | Impacto                                         | Probabilidade | Mitigação                                                                                                                |
+| ------------------------------------------------------- | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| **LLM alucina produto que não existe no catálogo**      | Crítico — cliente tenta comprar o que não temos | Média         | System prompt com validação rígida + pós-processamento que só permite produtos do banco + fallback para regras estáticas |
+| **Ash Framework curva de aprendizado**                  | Médio — atraso no M1                            | Alta          | Usar AshIgniter (gerador de projetos), começar com Resources simples, evoluir gradualmente                               |
+| **Cliente informa medidas erradas para o consultor**    | Médio — sugestão de quantidade errada           | Alta          | Consultor deve deixar explícito "calculei com base em X metros que você informou" e permitir ajuste manual da quantidade |
+| **Estoque negativo (race condition no checkout)**       | Alto — vender o que não tem                     | Baixa         | Usar row-level locking no PostgreSQL (SELECT ... FOR UPDATE) na confirmação do pedido                                    |
+| **Abandono por checkout manual (sem pagamento online)** | Alto — baixa conversão                          | Média         | É uma decisão consciente do MVP. Se a taxa de abandono for > 70%, priorizar gateway de pagamento na v0.2                 |
+| **Deploy BEAM em PaaS desconhecido**                    | Médio — debugging de release                    | Média         | Usar Docker + Docker Compose local, depois migrar para Fly.io que tem suporte nativo a Elixir                            |
 
 ---
 
 ## Apêndice A — Glossário
 
-| Termo | Definição |
-|-------|-----------|
-| **D2C** | Direct-to-Consumer — venda direta ao consumidor final, sem intermediários |
-| **Ash Framework** | Framework Elixir para domínios declarativos — Resources, APIs, autorização |
-| **AshAdmin** | Dashboard admin automático gerado a partir dos Resources do Ash |
-| **BEAM** | Máquina virtual do Erlang/Elixir — concorrência leve, tolerante a falhas |
-| **LiveView** | Biblioteca Phoenix para interfaces dinâmicas via WebSocket, sem JavaScript |
-| **ObraRule** | Regra de domínio que mapeia um tipo de obra aos materiais necessários |
-| **Guest Checkout** | Checkout sem criação de conta — apenas nome, telefone, e-mail e endereço |
-| **RAG** | Retrieval-Augmented Generation — busca semântica + LLM para respostas contextualizadas |
-| **HEEx** | HTML + Elixir (templating engine do Phoenix) |
+| Termo              | Definição                                                                              |
+| ------------------ | -------------------------------------------------------------------------------------- |
+| **D2C**            | Direct-to-Consumer — venda direta ao consumidor final, sem intermediários              |
+| **Ash Framework**  | Framework Elixir para domínios declarativos — Resources, APIs, autorização             |
+| **AshAdmin**       | Dashboard admin automático gerado a partir dos Resources do Ash                        |
+| **BEAM**           | Máquina virtual do Erlang/Elixir — concorrência leve, tolerante a falhas               |
+| **LiveView**       | Biblioteca Phoenix para interfaces dinâmicas via WebSocket, sem JavaScript             |
+| **ObraRule**       | Regra de domínio que mapeia um tipo de obra aos materiais necessários                  |
+| **Guest Checkout** | Checkout sem criação de conta — apenas nome, telefone, e-mail e endereço               |
+| **RAG**            | Retrieval-Augmented Generation — busca semântica + LLM para respostas contextualizadas |
+| **HEEx**           | HTML + Elixir (templating engine do Phoenix)                                           |
 
 ---
 
 ## Apêndice B — Decisões Técnicas Registradas
 
-| # | Decisão | Alternativa Rejeitada | Motivo |
-|---|---------|----------------------|--------|
-| 01 | Phoenix LiveView (não SPA) | Next.js + REST API | Catálogo não precisa de offline; LiveView elimina camada API + estado duplicado |
-| 02 | Ash Framework (não Ecto puro) | Ecto + Absinthe + Custom | Ash unifica Resource → GraphQL → Admin → Autorização em um ecossistema |
-| 03 | PostgreSQL (não SQLite) | SQLite para protótipo | Já é a stack do PSI, reuso de conhecimento; AshPostgres maduro |
-| 04 | Tailwind + DaisyUI (não componente lib) | Material UI, Chakra | DaisyUI é component-based sobre Tailwind, prototipação rápida, tema fácil |
-| 05 | Guest checkout (não auth obrigatória) | Kinde/Clerk desde o início | Reduz atrito de entrada; auth adicionada depois sem quebrar fluxo |
-| 06 | Pedido pendente + confirmação manual (não pagamento automático) | Stripe, Asaas | Testar demanda antes de investir em integração de pagamento |
-| 07 | GenServer stateful para consultor (não HTTP stateless) | Lambda/serverless | Sessão do chat precisa de contexto entre mensagens; GenServer é nativo no BEAM |
+| #   | Decisão                                                         | Alternativa Rejeitada      | Motivo                                                                          |
+| --- | --------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------------------------- |
+| 01  | Phoenix LiveView (não SPA)                                      | Next.js + REST API         | Catálogo não precisa de offline; LiveView elimina camada API + estado duplicado |
+| 02  | Ash Framework (não Ecto puro)                                   | Ecto + Absinthe + Custom   | Ash unifica Resource → GraphQL → Admin → Autorização em um ecossistema          |
+| 03  | PostgreSQL (não SQLite)                                         | SQLite para protótipo      | Já é a stack do PSI, reuso de conhecimento; AshPostgres maduro                  |
+| 04  | Tailwind + DaisyUI (não componente lib)                         | Material UI, Chakra        | DaisyUI é component-based sobre Tailwind, prototipação rápida, tema fácil       |
+| 05  | Guest checkout (não auth obrigatória)                           | Kinde/Clerk desde o início | Reduz atrito de entrada; auth adicionada depois sem quebrar fluxo               |
+| 06  | Pedido pendente + confirmação manual (não pagamento automático) | Stripe, Asaas              | Testar demanda antes de investir em integração de pagamento                     |
+| 07  | GenServer stateful para consultor (não HTTP stateless)          | Lambda/serverless          | Sessão do chat precisa de contexto entre mensagens; GenServer é nativo no BEAM  |

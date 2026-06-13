@@ -14,8 +14,7 @@ config :loja, Loja.Repo,
   password: "aquental",
   hostname: "hermes",
   database: "loja_dev",
-  ssl: false,
-  ssl_opts: [verify: :verify_none]
+  ssl: [verify: :verify_none]
 
 config :logger, :console, format: "[$level] $message\n"
 

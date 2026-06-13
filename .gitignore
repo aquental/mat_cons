@@ -36,3 +36,5 @@ Thumbs.db
 # Uploads
 priv/static/uploads/
 priv/static/images/
+
+.pgpass
