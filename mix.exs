@@ -10,7 +10,16 @@ defmodule Loja.MixProject do
       listeners: [Phoenix.CodeReloader],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      usage_rules: usage_rules()
+    ]
+  end
+
+  defp usage_rules do
+    [
+      file: "CLAUDE.md",
+      # Inline usage rules from all dependencies that ship them (mirrors the old `--all`).
+      usage_rules: [~r/.*/]
     ]
   end
 
@@ -26,6 +35,7 @@ defmodule Loja.MixProject do
 
   defp deps do
     [
+      {:usage_rules, "~> 1.0", only: [:dev]},
       # Phoenix
       {:phoenix, "~> 1.7"},
       {:phoenix_live_view, "~> 1.0"},
