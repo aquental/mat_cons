@@ -1,10 +1,38 @@
-/_build
-/cover
-/deps
-/doc
+# Elixir / Phoenix
+/_build/
+/cover/
+/deps/
+/doc/
 /.fetch
 erl_crash.dump
 *.ez
 *.beam
 /config/*.secret.exs
+
+# Node / npm
+/node_modules/
+npm-debug.log
+assets/node_modules/
+
+# IDE
 .elixir_ls/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Build artifacts
+/releases/
+/rel/
+
+# Uploads
+priv/static/uploads/
+priv/static/images/
