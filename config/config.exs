@@ -17,7 +17,7 @@ config :ash, :utc_datetime_usec, type: Ash.Type.UTCDatetimeUsec, default: &DateT
 
 config :loja, Loja.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "antonioquental_",
   hostname: "localhost",
   database: "loja_dev",
   ssl: false,

@@ -4,7 +4,7 @@ config :loja, LojaWeb.Endpoint, cache_static_manifest: "priv/static/cache_manife
 
 config :loja, Loja.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "antonioquental_",
   hostname: "localhost",
   database: "loja_test",
   pool: Ecto.Adapters.SQL.Sandbox,
