@@ -5,7 +5,7 @@ config :loja, LojaWeb.Endpoint, cache_static_manifest: "priv/static/cache_manife
 config :loja, Loja.Repo,
   username: "postgres",
   password: "antonioquental_",
-  hostname: "localhost",
+  hostname: "hermes",
   database: "loja_test",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: System.schedulers_online() * 2
