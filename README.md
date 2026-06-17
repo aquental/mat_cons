@@ -10,14 +10,14 @@
 
 ## Stack
 
-| Camada | Tecnologia |
-|--------|-----------|
-| Backend | Elixir 1.18+ / Phoenix 1.7+ |
-| Domain Layer | Ash Framework 3.x |
-| Database | PostgreSQL 16 |
-| Frontend | Phoenix LiveView + HEEx + Tailwind + DaisyUI |
-| IA | API LLM (a definir: OpenAI / xAI Grok) |
-| Deploy | Fly.io / Gigalixir / Hetzner + Docker |
+| Camada       | Tecnologia                                   |
+| ------------ | -------------------------------------------- |
+| Backend      | Elixir 1.20+ / Phoenix 1.8+                  |
+| Domain Layer | Ash Framework 3.x                            |
+| Database     | PostgreSQL 18                                |
+| Frontend     | Phoenix LiveView + HEEx + Tailwind + DaisyUI |
+| IA           | API LLM (a definir: OpenAI / xAI Grok)       |
+| Deploy       | Fly.io / Gigalixir                           |
 
 ## Quick Start
 
